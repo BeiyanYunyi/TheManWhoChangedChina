@@ -1,12 +1,3 @@
-# Fly me to the solid Moon
+# The Man Who Changed China
 
-SolidJS + Vite starter, with ESLint and prettier.
-
-## Usage
-
-```bash
-git clone https://github.com/lixiang810/FlyMeToTheSolidMoon --depth=1
-cd FlyMeToTheSolidMoon
-pnpm
-pnpm dev
-```
+他改变了中国——同款封面生成器
