@@ -1,6 +1,7 @@
 import html2canvas from 'html2canvas';
 import type { JSX } from 'solid-js';
 import state from '../state';
+import Button from './Button';
 import Input from './Input';
 
 const Form = () => {
@@ -23,6 +24,8 @@ const Form = () => {
     setTitle1,
     setSubtitle,
     bookRef,
+    encodeToParam,
+    backToDefault,
   } = state;
   const handleImage: JSX.EventHandlerUnion<HTMLInputElement, Event> = (e) => {
     const file = window.URL.createObjectURL(e.currentTarget.files![0]);
@@ -93,27 +96,46 @@ const Form = () => {
           setSubtitle(e.currentTarget.value);
         }}
       />
-      <div class="flex gap-2">
-        <button
-          class="p-2 rounded-md border-2 border-blue-500 bg-transparent hover:bg-blue-100"
+      <div class="flex gap-2 flex-wrap">
+        <Button
           type="button"
-          onClick={async (e) => {
+          onClick={(e) => {
             e.preventDefault();
             handleScreenshot(false);
           }}
         >
           截图
-        </button>
-        <button
-          class="p-2 rounded-md border-2 border-blue-500 bg-transparent hover:bg-blue-100"
+        </Button>
+        <Button
           type="button"
-          onClick={async (e) => {
+          onClick={(e) => {
             e.preventDefault();
             handleScreenshot(true);
           }}
         >
           下载
-        </button>
+        </Button>
+        <Button
+          type="button"
+          onClick={async (e) => {
+            e.preventDefault();
+            await window.navigator.clipboard.writeText(
+              `${window.location.origin}/${encodeToParam()}`,
+            );
+            alert('已复制到剪贴板');
+          }}
+        >
+          复制分享链接到剪贴板
+        </Button>
+        <Button
+          type="button"
+          onClick={async (e) => {
+            e.preventDefault();
+            backToDefault();
+          }}
+        >
+          回到默认
+        </Button>
       </div>
     </form>
   );
