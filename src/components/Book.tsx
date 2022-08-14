@@ -4,7 +4,10 @@ import state from '../state';
 const Book: Component<{ ref?: HTMLDivElement }> = (props) => {
   const { image, author, english0, english1, english2, english3, title0, title1, subtitle } = state;
   return (
-    <div class="bg-coverColor h-[225mm] w-[158mm]" ref={props.ref}>
+    <div
+      class="bg-coverColor border-coverColor border-r-1 border-solid h-[225mm] w-[158mm]"
+      ref={props.ref}
+    >
       <div class="flex mr-4 pt-4 justify-between">
         <img src={image()} class="w-[79mm] h-[79mm]" />
         <div class="flex flex-col items-end">
