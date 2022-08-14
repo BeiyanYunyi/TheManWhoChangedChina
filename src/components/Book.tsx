@@ -10,9 +10,9 @@ const Book: Component<{ ref?: HTMLDivElement }> = (props) => {
     >
       <div class="flex mr-4 pt-4 justify-between">
         <img src={image()} class="w-[79mm] h-[79mm]" />
-        <div class="flex flex-col items-end">
+        <div class="flex flex-col items-start">
           <p class="font-author text-authorFont text-[5mm]">{author()}</p>
-          <div class="flex flex-col font-cardo font-bold mt-4 text-englishFont text-[12mm] gap-4">
+          <div class="flex flex-col font-cardo font-bold mt-4 ml-4 text-englishFont text-[12mm] gap-4">
             <p>{english0()}</p>
             <p>{english1()}</p>
             <p>{english2()}</p>
