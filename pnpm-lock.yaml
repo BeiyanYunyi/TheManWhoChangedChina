@@ -6,7 +6,6 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.33.0
   '@typescript-eslint/parser': ^5.33.0
   '@unocss/reset': ^0.45.6
-  base2048: ^2.0.2
   eslint: ^8.21.0
   eslint-config-airbnb-base: ^15.0.0
   eslint-config-airbnb-typescript: ^17.0.0
@@ -27,7 +26,6 @@ specifiers:
 
 dependencies:
   '@unocss/reset': 0.45.6
-  base2048: 2.0.2
   html2canvas: 1.4.1
   solid-js: 1.4.8
 
@@ -1022,10 +1020,6 @@ packages:
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
     dev: true
-
-  /base2048/2.0.2:
-    resolution: {integrity: sha512-C2zXZf5AY2re5bUloEgZcidQmiKvS3bob6cKDjDiYRW27w6t06O9pDa+JxPkl2zVUB88qnVZ3nu2KvZUyIDOWg==}
-    dev: false
 
   /base64-arraybuffer/1.0.2:
     resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}

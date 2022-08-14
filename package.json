@@ -32,7 +32,6 @@
   },
   "dependencies": {
     "@unocss/reset": "^0.45.6",
-    "base2048": "^2.0.2",
     "html2canvas": "^1.4.1",
     "solid-js": "^1.4.8"
   }
