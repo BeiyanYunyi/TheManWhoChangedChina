@@ -1,3 +1,4 @@
+import html2canvas from 'html2canvas';
 import type { JSX } from 'solid-js';
 import state from '../state';
 import Input from './Input';
@@ -21,6 +22,7 @@ const Form = () => {
     setTitle0,
     setTitle1,
     setSubtitle,
+    bookRef,
   } = state;
   const handleImage: JSX.EventHandlerUnion<HTMLInputElement, Event> = (e) => {
     const file = window.URL.createObjectURL(e.currentTarget.files![0]);
@@ -77,6 +79,17 @@ const Form = () => {
           setSubtitle(e.currentTarget.value);
         }}
       />
+      <button
+        type="button"
+        onClick={async (e) => {
+          e.preventDefault();
+          const canvas = await html2canvas(bookRef()!);
+          const image = canvas.toDataURL('image/png');
+          window.open(image, '_blank');
+        }}
+      >
+        截图
+      </button>
     </form>
   );
 };

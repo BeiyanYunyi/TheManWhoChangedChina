@@ -11,6 +11,7 @@ const state = () => {
   const [title0, setTitle0] = createSignal('他改变了');
   const [title1, setTitle1] = createSignal('中国');
   const [subtitle, setSubtitle] = createSignal('江泽民传');
+  const [bookRef, setBookRef] = createSignal<HTMLDivElement>();
   return {
     image,
     setImage,
@@ -30,6 +31,8 @@ const state = () => {
     setTitle1,
     subtitle,
     setSubtitle,
+    bookRef,
+    setBookRef,
   };
 };
 
