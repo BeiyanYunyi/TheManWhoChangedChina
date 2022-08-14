@@ -10,7 +10,7 @@ const App: Component = () => {
     setBookRef(bookRef);
   });
   return (
-    <div class="flex">
+    <div class="flex font-sans gap-2">
       <Book ref={bookRef} />
       <Form />
     </div>

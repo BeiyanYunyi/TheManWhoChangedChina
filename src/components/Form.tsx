@@ -28,9 +28,23 @@ const Form = () => {
     const file = window.URL.createObjectURL(e.currentTarget.files![0]);
     setImage(file);
   };
+  const handleScreenshot = async (download?: boolean) => {
+    const canvas = await html2canvas(bookRef()!);
+    const image = canvas.toDataURL('image/png');
+    const a = document.createElement('a');
+    if (download) {
+      a.setAttribute('download', 'TheManWhoChangedChina.png');
+    }
+    a.setAttribute('target', '_blank');
+    a.setAttribute('href', image);
+    a.click();
+  };
   return (
     <form class="flex flex-col gap-2">
-      <input type="file" accept="image/*" onChange={handleImage} />
+      <label class="flex gap-2 items-center">
+        封面图片：
+        <input type="file" accept="image/*" onChange={handleImage} placeholder="图片" />
+      </label>
       <Input
         value={author()}
         onInput={(e) => {
@@ -79,20 +93,28 @@ const Form = () => {
           setSubtitle(e.currentTarget.value);
         }}
       />
-      <button
-        type="button"
-        onClick={async (e) => {
-          e.preventDefault();
-          const canvas = await html2canvas(bookRef()!);
-          const image = canvas.toDataURL('image/png');
-          const a = document.createElement('a');
-          a.setAttribute('download', 'TheManWhoChangedChina.png');
-          a.setAttribute('href', image);
-          a.click();
-        }}
-      >
-        截图
-      </button>
+      <div class="flex gap-2">
+        <button
+          class="p-2 rounded-md border-2 border-blue-500 bg-transparent hover:bg-blue-100"
+          type="button"
+          onClick={async (e) => {
+            e.preventDefault();
+            handleScreenshot(false);
+          }}
+        >
+          截图
+        </button>
+        <button
+          class="p-2 rounded-md border-2 border-blue-500 bg-transparent hover:bg-blue-100"
+          type="button"
+          onClick={async (e) => {
+            e.preventDefault();
+            handleScreenshot(true);
+          }}
+        >
+          下载
+        </button>
+      </div>
     </form>
   );
 };
