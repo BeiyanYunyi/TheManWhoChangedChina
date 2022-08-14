@@ -6,7 +6,7 @@ const Book: Component = () => {
   return (
     <div class="bg-coverColor h-[225mm] w-[158mm]">
       <div class="flex mr-4 pt-4 justify-between">
-        <img src={image()} class="w-[79mm]" />
+        <img src={image()} class="w-[79mm] h-[79mm]" />
         <div class="flex flex-col items-end">
           <p class="font-author text-authorFont text-[5mm]">{author()}</p>
           <div class="flex flex-col font-cardo font-bold mt-4 text-englishFont text-[12mm] gap-4">
