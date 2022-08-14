@@ -6,8 +6,8 @@ const App: Component = () => (
     <div class="flex mr-4 pt-4 justify-between">
       <img src={image} class="w-[79mm]" />
       <div class="flex flex-col items-end">
-        <p class="text-authorFont text-[5mm]">［美］罗伯特·劳伦斯·库恩 著</p>
-        <div class="flex flex-col font-english font-bold mt-4 text-englishFont text-[12mm] gap-4">
+        <p class="font-author text-authorFont text-[5mm]">［美］罗伯特·劳伦斯·库恩 著</p>
+        <div class="flex flex-col font-cardo font-bold mt-4 text-englishFont text-[12mm] gap-4">
           <p>THE MAN</p>
           <p>WHO</p>
           <p>CHANGED</p>
