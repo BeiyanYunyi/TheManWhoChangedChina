@@ -85,7 +85,10 @@ const Form = () => {
           e.preventDefault();
           const canvas = await html2canvas(bookRef()!);
           const image = canvas.toDataURL('image/png');
-          window.open(image, '_blank');
+          const a = document.createElement('a');
+          a.setAttribute('download', 'TheManWhoChangedChina.png');
+          a.setAttribute('href', image);
+          a.click();
         }}
       >
         截图
