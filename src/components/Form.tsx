@@ -120,7 +120,7 @@ const Form = () => {
           onClick={async (e) => {
             e.preventDefault();
             await window.navigator.clipboard.writeText(
-              `${window.location.origin}/${encodeToParam()}`,
+              `${window.location.origin}/#${encodeToParam()}`,
             );
             alert('已复制到剪贴板');
           }}
