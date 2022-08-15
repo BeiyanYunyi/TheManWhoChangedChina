@@ -11,7 +11,7 @@ interface IParams {
   t: string;
 }
 
-const defaultValue: IParams = {
+const defaultValue = {
   author: '［美］罗伯特·劳伦斯·库恩　著',
   english: 'THE MAN WHO CHANGED CHINA',
   title: ['他改变了', '中国'],
@@ -22,13 +22,13 @@ const defaultValue: IParams = {
 const state = () => {
   const paramsb64 = window.location.hash;
   const calculatedValue = (() => {
-    if (!paramsb64) return defaultValue;
+    if (!paramsb64) return { ...defaultValue };
     try {
       const params = JSON.parse(decode(paramsb64.substring(1))) as IParams;
       return params;
     } catch (e) {
       console.error(e);
-      return defaultValue;
+      return { ...defaultValue };
     }
   })();
   const [store, setStore] = createStore(calculatedValue);
