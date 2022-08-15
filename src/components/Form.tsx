@@ -5,28 +5,7 @@ import Button from './Button';
 import Input from './Input';
 
 const Form = () => {
-  const {
-    author,
-    english0,
-    english1,
-    english2,
-    english3,
-    title0,
-    title1,
-    subtitle,
-    setImage,
-    setAuthor,
-    setEnglish0,
-    setEnglish1,
-    setEnglish2,
-    setEnglish3,
-    setTitle0,
-    setTitle1,
-    setSubtitle,
-    bookRef,
-    encodeToParam,
-    backToDefault,
-  } = state;
+  const { store, setStore, setImage, bookRef, encodeToParam, backToDefault } = state;
   const handleImage: JSX.EventHandlerUnion<HTMLInputElement, Event> = (e) => {
     const file = window.URL.createObjectURL(e.currentTarget.files![0]);
     setImage(file);
@@ -49,51 +28,51 @@ const Form = () => {
         <input type="file" accept="image/*" onChange={handleImage} placeholder="图片" />
       </label>
       <Input
-        value={author()}
+        value={store.author}
         onInput={(e) => {
-          setAuthor(e.currentTarget.value);
+          setStore('author', e.currentTarget.value);
         }}
       />
       <Input
-        value={english0()}
+        value={store.english0}
         onInput={(e) => {
-          setEnglish0(e.currentTarget.value);
+          setStore('english0', e.currentTarget.value);
         }}
       />
       <Input
-        value={english1()}
+        value={store.english1}
         onInput={(e) => {
-          setEnglish1(e.currentTarget.value);
+          setStore('english1', e.currentTarget.value);
         }}
       />
       <Input
-        value={english2()}
+        value={store.english2}
         onInput={(e) => {
-          setEnglish2(e.currentTarget.value);
+          setStore('english2', e.currentTarget.value);
         }}
       />
       <Input
-        value={english3()}
+        value={store.english3}
         onInput={(e) => {
-          setEnglish3(e.currentTarget.value);
+          setStore('english3', e.currentTarget.value);
         }}
       />
       <Input
-        value={title0()}
+        value={store.title0}
         onInput={(e) => {
-          setTitle0(e.currentTarget.value);
+          setStore('title0', e.currentTarget.value);
         }}
       />
       <Input
-        value={title1()}
+        value={store.title1}
         onInput={(e) => {
-          setTitle1(e.currentTarget.value);
+          setStore('title1', e.currentTarget.value);
         }}
       />
       <Input
-        value={subtitle()}
+        value={store.subtitle}
         onInput={(e) => {
-          setSubtitle(e.currentTarget.value);
+          setStore('subtitle', e.currentTarget.value);
         }}
       />
       <div class="flex gap-2 flex-wrap">
