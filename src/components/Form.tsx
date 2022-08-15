@@ -5,7 +5,8 @@ import Button from './Button';
 import Input from './Input';
 
 const Form = () => {
-  const { store, setStore, setImage, bookRef, encodeToParam, backToDefault } = state;
+  const { store, setStore, setEnglish, setTitle, setImage, bookRef, encodeToParam, backToDefault } =
+    state;
   const handleImage: JSX.EventHandlerUnion<HTMLInputElement, Event> = (e) => {
     const file = window.URL.createObjectURL(e.currentTarget.files![0]);
     setImage(file);
@@ -39,39 +40,39 @@ const Form = () => {
         }}
       />
       <Input
-        value={store.english0}
+        value={store.english[0]}
         onInput={(e) => {
-          setStore('english0', e.currentTarget.value);
+          setEnglish(0, e.currentTarget.value);
         }}
       />
       <Input
-        value={store.english1}
+        value={store.english[1]}
         onInput={(e) => {
-          setStore('english1', e.currentTarget.value);
+          setEnglish(1, e.currentTarget.value);
         }}
       />
       <Input
-        value={store.english2}
+        value={store.english[2]}
         onInput={(e) => {
-          setStore('english2', e.currentTarget.value);
+          setEnglish(2, e.currentTarget.value);
         }}
       />
       <Input
-        value={store.english3}
+        value={store.english[3]}
         onInput={(e) => {
-          setStore('english3', e.currentTarget.value);
+          setEnglish(3, e.currentTarget.value);
         }}
       />
       <Input
-        value={store.title0}
+        value={store.title[0]}
         onInput={(e) => {
-          setStore('title0', e.currentTarget.value);
+          setTitle(0, e.currentTarget.value);
         }}
       />
       <Input
-        value={store.title1}
+        value={store.title[1]}
         onInput={(e) => {
-          setStore('title1', e.currentTarget.value);
+          setTitle(1, e.currentTarget.value);
         }}
       />
       <Input
