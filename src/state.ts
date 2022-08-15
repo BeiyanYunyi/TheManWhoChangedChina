@@ -5,14 +5,14 @@ import { decode, encode } from './endecoder';
 
 interface IParams {
   author: string;
-  english: [string, string, string, string];
+  english: string;
   title: [string, string];
   subtitle: string;
 }
 
 const defaultValue: IParams = {
-  author: '［美］罗伯特·劳伦斯·库恩 著',
-  english: ['THE MAN', 'WHO', 'CHANGED', 'CHINA'],
+  author: '［美］罗伯特·劳伦斯·库恩　著',
+  english: 'THE MAN WHO CHANGED CHINA',
   title: ['他改变了', '中国'],
   subtitle: '江泽民传',
 };
@@ -42,18 +42,6 @@ const state = () => {
     setStore(defaultValue);
   };
 
-  const setEnglish = (index: number, value: string) =>
-    setStore(
-      'english',
-      (ori) =>
-        [...ori.slice(0, index), value, ...ori.slice(index + 1)] as [
-          string,
-          string,
-          string,
-          string,
-        ],
-    );
-
   const setTitle = (index: number, value: string) =>
     setStore(
       'title',
@@ -65,7 +53,6 @@ const state = () => {
     setImage,
     store,
     setStore,
-    setEnglish,
     setTitle,
     bookRef,
     setBookRef,

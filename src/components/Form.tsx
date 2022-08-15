@@ -5,8 +5,7 @@ import Button from './Button';
 import Input from './Input';
 
 const Form = () => {
-  const { store, setStore, setEnglish, setTitle, setImage, bookRef, encodeToParam, backToDefault } =
-    state;
+  const { store, setStore, setTitle, setImage, bookRef, encodeToParam, backToDefault } = state;
   const handleImage: JSX.EventHandlerUnion<HTMLInputElement, Event> = (e) => {
     const file = window.URL.createObjectURL(e.currentTarget.files![0]);
     setImage(file);
@@ -40,27 +39,9 @@ const Form = () => {
         }}
       />
       <Input
-        value={store.english[0]}
+        value={store.english}
         onInput={(e) => {
-          setEnglish(0, e.currentTarget.value);
-        }}
-      />
-      <Input
-        value={store.english[1]}
-        onInput={(e) => {
-          setEnglish(1, e.currentTarget.value);
-        }}
-      />
-      <Input
-        value={store.english[2]}
-        onInput={(e) => {
-          setEnglish(2, e.currentTarget.value);
-        }}
-      />
-      <Input
-        value={store.english[3]}
-        onInput={(e) => {
-          setEnglish(3, e.currentTarget.value);
+          setStore('english', e.currentTarget.value);
         }}
       />
       <Input

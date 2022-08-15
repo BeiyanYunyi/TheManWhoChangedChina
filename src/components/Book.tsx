@@ -53,20 +53,22 @@ const Book: Component<{ ref?: HTMLDivElement }> = (props) => {
     >
       <div class="flex mr-4 pt-4">
         <img src={image()} class="w-[75mm] h-[79mm]" />
-        <div class="flex flex-col items-start">
-          <p class="font-author text-authorFont text-[5.5mm]">{store.author}</p>
-          <div class="flex flex-col font-cardo mt-4 ml-4 text-englishFont text-[13mm] gap-4">
-            <p>{store.english[0]}</p>
-            <p>{store.english[1]}</p>
-            <p>{store.english[2]}</p>
-            <p>{store.english[3]}</p>
-          </div>
+        <div class="flex flex-col items-start mt-2 gap-2">
+          <p class="font-author text-authorFont text-[5mm]">{store.author}</p>
+          <p class="font-cardo ml-4 text-englishFont text-[12mm]" style={{ 'line-height': '1.4' }}>
+            {store.english}
+          </p>
         </div>
       </div>
       <div class="font-simsun font-extrabold mr-4">
         <div class="flex flex-col text-titleFont text-[35mm] items-end">
           <p>{store.title[0]}</p>
-          <p class="mt-4 mr-[17mm]">{store.title[1]}</p>
+          <p
+            class="mt-4 mr-[17mm]"
+            style={store.title[1].length >= 4 ? { 'margin-right': 0 } : undefined}
+          >
+            {store.title[1]}
+          </p>
         </div>
         <p class="mt-6 mr-4 text-subtitleFont text-right text-[18mm]">{store.subtitle}</p>
       </div>
