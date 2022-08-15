@@ -54,10 +54,8 @@ const Book: Component<{ ref?: HTMLDivElement }> = (props) => {
       <div class="flex mr-4 pt-4">
         <img src={image()} class="w-[75mm] h-[79mm]" />
         <div class="flex flex-col items-start mt-2 gap-2">
-          <p class="font-author text-authorFont text-[5mm]">{store.author}</p>
-          <p class="font-cardo ml-4 text-englishFont text-[12mm]" style={{ 'line-height': '1.4' }}>
-            {store.english}
-          </p>
+          <p class="font-author text-authorFont text-[5mm] text-justify">{store.author}</p>
+          <p class="font-cardo ml-4 text-englishFont text-[12mm] leading-snug">{store.english}</p>
         </div>
       </div>
       <div class="font-simsun font-extrabold mr-4">
@@ -71,6 +69,9 @@ const Book: Component<{ ref?: HTMLDivElement }> = (props) => {
           </p>
         </div>
         <p class="mt-6 mr-4 text-subtitleFont text-right text-[18mm]">{store.subtitle}</p>
+        <p class="mt-12 font-author text-authorFont text-center font-300 tracking-widest text-[4.5mm]">
+          {store.t}
+        </p>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ interface IParams {
   english: string;
   title: [string, string];
   subtitle: string;
+  t: string;
 }
 
 const defaultValue: IParams = {
@@ -15,6 +16,7 @@ const defaultValue: IParams = {
   english: 'THE MAN WHO CHANGED CHINA',
   title: ['他改变了', '中国'],
   subtitle: '江泽民传',
+  t: '谈　峥 于海江　等译　　陆谷孙　校',
 };
 
 const state = () => {

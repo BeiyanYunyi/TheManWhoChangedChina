@@ -62,6 +62,12 @@ const Form = () => {
           setStore('subtitle', e.currentTarget.value);
         }}
       />
+      <Input
+        value={store.t}
+        onInput={(e) => {
+          setStore('t', e.currentTarget.value);
+        }}
+      />
       <div class="flex gap-2 flex-wrap">
         <Button
           type="button"
