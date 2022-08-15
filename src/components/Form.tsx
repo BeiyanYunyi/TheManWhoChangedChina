@@ -11,7 +11,12 @@ const Form = () => {
     setImage(file);
   };
   const handleScreenshot = async (download?: boolean) => {
-    const canvas = await html2canvas(bookRef()!);
+    const canvas = await html2canvas(bookRef()!, {
+      height: 851,
+      width: 598,
+      scale: 1,
+      backgroundColor: '#f50f11',
+    });
     const image = canvas.toDataURL('image/png');
     const a = document.createElement('a');
     if (download) {

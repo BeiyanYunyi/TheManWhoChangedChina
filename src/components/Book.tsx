@@ -48,7 +48,7 @@ const Book: Component<{ ref?: HTMLDivElement }> = (props) => {
 
   return (
     <div
-      class="bg-coverColor border-coverColor border-r-1 border-solid h-[225mm] w-[158mm]"
+      class="bg-coverColor border-coverColor border-r-1 border-solid h-[225mm] w-[158mm] flex-shrink-0"
       ref={props.ref}
     >
       <div class="flex mr-4 pt-4">

@@ -11,8 +11,8 @@ const App: Component = () => {
   });
   return (
     <div class="flex font-sans gap-2">
-      <Book ref={bookRef} />
       <Form />
+      <Book ref={bookRef} />
     </div>
   );
 };
